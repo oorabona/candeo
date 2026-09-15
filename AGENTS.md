@@ -1,7 +1,7 @@
-# Working on candeo
+# Working on Candeo
 
 Rules for anyone changing this repository, people and coding agents alike.
-The README explains what candeo is; `docs/design/` records why it is built
+The README explains what Candeo is; `docs/design/` records why it is built
 the way it is.
 
 ## Layout and commands

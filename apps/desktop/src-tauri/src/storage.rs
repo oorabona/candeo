@@ -47,7 +47,7 @@
 //!
 //! # Shipped effects are files too
 //!
-//! The effects candeo ships are copied into the folder once, at startup, and are
+//! The effects Candeo ships are copied into the folder once, at startup, and are
 //! from then on files: listed and run like any other. `settings.json` remembers
 //! what was copied, to update an unchanged copy and never bring back one someone
 //! removed — see [`Store::seed_shipped`]. The application does not delete, rename
@@ -885,7 +885,7 @@ pub(crate) fn validate_name(name: &str) -> CmdResult<()> {
 /// Where an effect's file lives. See `docs/design/effects-sources.md`.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub enum Source {
-    /// `app_data_dir()/effects/`: the effects candeo ships, seeded and updated
+    /// `app_data_dir()/effects/`: the effects Candeo ships, seeded and updated
     /// by it.
     Shipped,
     /// `Documents/candeo/effects/`: the effects people write, duplicate or drop
@@ -1165,7 +1165,7 @@ impl Store {
         let mut effects = Vec::new();
         for source in Source::ALL {
             for name in self.names(source)? {
-                // A file candeo did not put in the shipped folder is not a
+                // A file Candeo did not put in the shipped folder is not a
                 // built-in: the next startup moves it to the user's folder
                 // ([`Self::migrate_sources`]).
                 if source == Source::Shipped && !matches!(shipped.get(&name), Some(Some(_))) {
@@ -1511,7 +1511,7 @@ impl Store {
     ///
     /// "Unchanged" means the file still has the hash recorded when it was copied:
     /// an update never overwrites a line someone wrote. A file left without a
-    /// record is not candeo's: [`Self::migrate_sources`] moves it to the user's
+    /// record is not Candeo's: [`Self::migrate_sources`] moves it to the user's
     /// folder.
     pub fn seed_shipped(&self, shipped: &[Shipped]) -> CmdResult<Seeding> {
         let before = self.read_settings()?;
@@ -1560,7 +1560,7 @@ impl Store {
         Ok(seeding)
     }
 
-    /// Moves to the user's folder every file of the shipped folder candeo did not
+    /// Moves to the user's folder every file of the shipped folder Candeo did not
     /// put there, rewriting the references to it, and brings `settings.json` to
     /// effect keys once. Returns, when it did so, each name of that time with the
     /// key it became, for the window's drafts.
@@ -1696,7 +1696,7 @@ impl Store {
     /// how a built-in becomes someone's own. The folder stays theirs, though, and
     /// this is what repairs what was done there.
     ///
-    /// Refused when a file candeo did not put there holds the name in the shipped
+    /// Refused when a file Candeo did not put there holds the name in the shipped
     /// folder: restoring never overwrites a line of someone's own.
     pub fn restore_shipped(&self, shipped: &[Shipped], name: &str) -> CmdResult<()> {
         let effect = shipped
@@ -1725,7 +1725,7 @@ impl Store {
     ///
     /// Directories first, since their migration assumes version 0 settings; then
     /// the former built-in ids; then the copies, which record themselves in the
-    /// settings the first two steps wrote; then the move of what is not candeo's
+    /// settings the first two steps wrote; then the move of what is not Candeo's
     /// to the user's folder, which reads those records. Seeding runs once more:
     /// a shipped effect whose name a moved file held can be copied now.
     pub fn migrate(&self, shipped: &[Shipped]) -> CmdResult<(BTreeMap<String, String>, Seeding)> {
@@ -1785,12 +1785,12 @@ impl Store {
     /// against an interleaving nothing produces, and left a file behind on every
     /// failure, where a fixed name is simply overwritten on the next attempt.
     ///
-    /// ⚠️ **This reasoning holds within one process, not between two.** Two candeo
+    /// ⚠️ **This reasoning holds within one process, not between two.** Two Candeo
     /// instances would write to the *same* `settings.json.tmp`, and one would
     /// rename what the other is writing: the rename would stay atomic, but what it
     /// published would not — truncated settings, or the other instance's. What
     /// keeps this name fixed is therefore [`crate::single_instance`], and the two
-    /// decisions are not undone one without the other: making candeo
+    /// decisions are not undone one without the other: making Candeo
     /// multi-instance would require revisiting this name, and revisiting it
     /// without that would buy nothing.
     pub fn write_settings(&self, settings: &Settings) -> CmdResult<()> {
@@ -1996,7 +1996,7 @@ fn declared_fields(raw: &str) -> Result<Declared, String> {
     };
     if api_version == 0 || api_version > EFFECTS_API_VERSION {
         return Err(format!(
-            "effect written for version {api_version} of the effects API; this version of candeo only knows version {EFFECTS_API_VERSION}"
+            "effect written for version {api_version} of the effects API; this version of Candeo only knows version {EFFECTS_API_VERSION}"
         ));
     }
     let reads_keys = value
@@ -2119,7 +2119,7 @@ pub fn cache_effect(
     js: String,
 ) -> CmdResult<EffectEntry> {
     let entry = store(&app)?.cache_effect(&EffectKey::parse(&key)?, &hash, &js)?;
-    // An applied effect edited outside candeo waits for this compilation to
+    // An applied effect edited outside Candeo waits for this compilation to
     // resume: see [`crate::runtime::resume_applied`].
     crate::runtime::resume_waiting(&app, &key);
     Ok(entry)
@@ -3169,7 +3169,7 @@ mod tests {
     }
 
     /// A shipped effect someone deleted in the folder does not come back by
-    /// itself; renamed there, it is not candeo's any more, and moves to the
+    /// itself; renamed there, it is not Candeo's any more, and moves to the
     /// user's folder.
     #[test]
     fn a_deleted_or_renamed_copy_never_comes_back() {
@@ -3444,7 +3444,7 @@ mod tests {
                 "Onde circulaire (2)"
             ]
         );
-        // Nothing but candeo's files stays among the shipped effects.
+        // Nothing but Candeo's files stays among the shipped effects.
         assert_eq!(
             store.names(Source::Shipped).unwrap().len(),
             crate::shipped::ALL.len()

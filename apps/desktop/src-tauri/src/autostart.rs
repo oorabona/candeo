@@ -1,7 +1,7 @@
-//! Launching candeo at login, hidden in the notification area (#103).
+//! Launching Candeo at login, hidden in the notification area (#103).
 //!
-//! A firmware effect survives a reboot; an effect candeo runs only comes back
-//! once candeo runs again.
+//! A firmware effect survives a reboot; an effect Candeo runs only comes back
+//! once Candeo runs again.
 //!
 //! # The system's entry is the only record
 //!
@@ -45,7 +45,7 @@ fn available() -> bool {
 #[serde(rename_all = "camelCase")]
 pub struct LaunchAtLogin {
     pub enabled: bool,
-    /// False in a development build, and on a system candeo writes no entry for.
+    /// False in a development build, and on a system Candeo writes no entry for.
     pub available: bool,
 }
 
@@ -170,7 +170,7 @@ mod platform {
         if status != 0 {
             return Err(format!("Run value not written: error {status}"));
         }
-        // Turned on from candeo is a decision: an earlier "off" from Task Manager
+        // Turned on from Candeo is a decision: an earlier "off" from Task Manager
         // would otherwise keep the new entry from running.
         delete(APPROVED)
     }

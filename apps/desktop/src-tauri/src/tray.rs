@@ -1,4 +1,4 @@
-//! The tray icon: controlling candeo **without the window**.
+//! The tray icon: controlling Candeo **without the window**.
 //!
 //! # This module does not deliver a shortcut, it delivers a promise
 //!
@@ -24,7 +24,7 @@
 //! promise at the very place where it has just been kept.
 //!
 //! The cost is real — the application no longer has an obvious exit — and it is
-//! paid twice: "Quit candeo" is **the only** clean exit, isolated at the bottom of
+//! paid twice: "Quit Candeo" is **the only** clean exit, isolated at the bottom of
 //! the menu by its own separator, and the first close after each launch says so
 //! in a system notification ([`tell_still_running`]). An application you cannot
 //! figure out how to quit is an application you uninstall.
@@ -91,7 +91,7 @@ pub(crate) const STATE_CHANGED: &str = "candeo://etat-change";
 
 /// True when the icon is actually in place.
 ///
-/// **This is not a convenience: it is what keeps candeo from becoming
+/// **This is not a convenience: it is what keeps Candeo from becoming
 /// impossible to quit.** If placing it fails — no system tray, no icon in the
 /// bundle, a desktop environment without a tray area — only the window is left
 /// to control the application. Preventing the exit then, or hiding the window on
@@ -114,7 +114,7 @@ pub(crate) fn installed() -> bool {
 /// Set once [`tell_still_running`] has spoken in this launch.
 static TOLD: AtomicBool = AtomicBool::new(false);
 
-/// Says, on the first close after each launch, that candeo still runs and how to
+/// Says, on the first close after each launch, that Candeo still runs and how to
 /// quit (#110), as applications that keep running do.
 ///
 /// Once per launch: whoever knows does not need it repeated at every close. A
@@ -412,7 +412,7 @@ fn device_submenus(app: &AppHandle, language: Language) -> Built<Vec<Submenu<Wry
 /// The menu, and what was missing to build it fully.
 ///
 /// The second member is `Some` when the menu is **degraded**: the icon is there,
-/// "Ouvrir la fenêtre" (Open window) and "Quitter candeo" too, but the device
+/// "Open window" and "Quit Candeo" too, but the device
 /// list is missing. That is deliberately a degradation and not an error — the
 /// two remaining items are the ones that depend on nothing, and they are the
 /// ones most needed when something is wrong. Refusing to place the icon over an
@@ -661,7 +661,7 @@ fn open_window(app: &AppHandle) {
 /// nothing more.
 fn quit(app: &AppHandle) {
     app.state::<AppState>().engine.stop_all();
-    tracing::info!("candeo exiting, requested from the system tray");
+    tracing::info!("Candeo exiting, requested from the system tray");
     // A code, hence `ExitRequested { code: Some(_) }`: that is what tells this
     // exit apart from the one caused by closing the last window, and therefore
     // what lets it through. See [`crate::run`].
@@ -764,7 +764,7 @@ fn place_icon(app: &AppHandle) -> Built<()> {
 
     TrayIconBuilder::with_id(ICON_ID)
         .icon(icon)
-        .tooltip("candeo")
+        .tooltip("Candeo")
         .menu(&initial_menu)
         // Left click opens the window, right click opens the menu: that is the
         // system tray convention, and it puts "Ouvrir la fenêtre" one click

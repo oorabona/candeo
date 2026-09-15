@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "candeo",
+  "productName": "Candeo",
   "version": "0.2.0",
   "identifier": "com.o2csi.candeo",
   "build": {
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "candeo",
+        "title": "Candeo",
         "create": false,
         "width": 1024,
         "height": 720,
@@ -38,6 +38,9 @@
     "windows": {
       "nsis": {
         "installMode": "currentUser"
+      },
+      "wix": {
+        "upgradeCode": "063517D8-1EE6-5EB0-877C-D8C0DA6C6EDD"
       }
     },
     "linux": {

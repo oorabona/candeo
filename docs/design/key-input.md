@@ -45,7 +45,7 @@ The swatch is sampled with no presses, so a key-reactive effect should draw
 something at rest — Ripples has a dim background color.
 
 **The API version stays 1.** Nothing is released yet, so no effect written for
-a published version can meet a candeo without `presses`. The version check
+a published version can meet a Candeo without `presses`. The version check
 (`cache_effect` in `docs/api/commands.md`) is for changes made after the first
 release.
 
@@ -106,7 +106,7 @@ ring width, lifetime. Descriptions and labels in English and French, as the
 other shipped effects.
 
 **In the preview**, nothing specific: the preview loop receives presses like a
-device loop, so the simulator shows the ripples while someone types — in candeo's
+device loop, so the simulator shows the ripples while someone types — in Candeo's
 window or anywhere else. The simulator does not highlight pressed keys for other
 effects: that would mean capturing for every effect, and the simulator draws the
 engine's frames, nothing else.

@@ -270,7 +270,7 @@ export interface EffectModule<P = undefined> {
   readonly description?: Text
   /**
    * The version of the effects API this effect was written against. Absent
-   * means the first one; candeo refuses to load an effect written for a newer
+   * means the first one; Candeo refuses to load an effect written for a newer
    * version than it knows.
    */
   readonly apiVersion?: number

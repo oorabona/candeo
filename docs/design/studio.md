@@ -347,7 +347,7 @@ No new dependency on the Rust side apart from `rquickjs`, none on the front end 
 - **Leaving the editor stops the preview, not the applied effect.** Nobody is
   left to watch the preview. The released channel cuts the frame stream; the
   device loop keeps feeding the keyboard, window closed included —
-  the close button hides the app to the system tray, it does not quit it. Quitting it is "Quitter candeo" (Quit candeo) in the icon menu, and it is the
+  the close button hides the app to the system tray, it does not quit it. Quitting it is "Quit Candeo" in the icon menu, and it is the
   only action that stops effects.
 
 ---
@@ -390,7 +390,7 @@ collapse: it is the content, nothing would be left.
 ### The devices column
 
 It lists **controlled** devices. Adoption stays in the
-"Périphériques" (Devices) view: choosing what you configure and choosing what candeo is allowed to
+"Périphériques" (Devices) view: choosing what you configure and choosing what Candeo is allowed to
 control are two different actions, and merging them would turn a selection click
 into a takeover.
 
@@ -506,7 +506,7 @@ icons.
 The editor has no devices column: it shows the target device's dot next to
 Apply, the only place there that signals a loss.
 
-The count moves to the window title — "candeo - 2 devices controlled", with how
+The count moves to the window title — "Candeo - 2 devices controlled", with how
 many are unreachable when some are. A device adopted but unplugged is counted
 **and** said to be unreachable: merging the two would make "controlled but
 absent" inexpressible.
@@ -590,7 +590,7 @@ of the two is the nominal path, and neither of the two could be.
 > the window is closed — only when the app exits. The safety net
 > loses reach and the timer gains as much; what does not change
 > is that the nominal path remains the write at the end of the gesture. The only remaining case
-> is a write pending at the moment you choose "Quitter candeo", and
+> is a write pending at the moment you choose "Quit Candeo", and
 > `change` has almost always already sent it.
 >
 > A window that survives hidden has a second effect, and it reaches further:

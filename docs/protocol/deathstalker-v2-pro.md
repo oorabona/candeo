@@ -63,7 +63,7 @@ So it is not a USB interface, hence no number that `hidapi` could
 read: it is a **virtual** HID collection, which only exists where that driver is
 installed.
 
-candeo rules it out with the rule that already applies to all the others: the interface
+Candeo rules it out with the rule that already applies to all the others: the interface
 must be the layout's (`Layout::is_lighting_interface`).
 
 ---
@@ -437,7 +437,7 @@ exactly the kind of coincidence that must be tested rather than concluded from.
 via `0x82`. If the identifier read back differs from the one set, the device **ignored**
 the command — even if the write returned `0x02`.
 
-### The device mode — and why candeo leaves it alone
+### The device mode — and why Candeo leaves it alone
 
 `0x00`/`0x84` returns `0x00`, i.e. **normal mode**, and our custom lighting
 works perfectly that way. OpenRazer, for its part, switches devices to **driver
@@ -451,7 +451,7 @@ observed on a Basilisk V3, whose DPI cycle and scroll wheel lock
 became inert, fixed by switching back to normal mode.
 
 OpenRazer is a **full driver**: it handles macro keys, DPI,
-profiles, so it needs the firmware to hand over control. **candeo only
+profiles, so it needs the firmware to hand over control. **Candeo only
 controls the lighting.** Switching to driver mode would bring us nothing and
 would break keys that the device handles very well on its own.
 

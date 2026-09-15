@@ -1,7 +1,7 @@
 # Accès non privilégié au clavier, sous Linux.
 #
 # Le noyau crée les nœuds /dev/hidraw* en 0600 root:root. Sans cette règle,
-# candeo ne voit le clavier qu'en étant lancé en root — ce qu'une application
+# Candeo ne voit le clavier qu'en étant lancé en root — ce qu'une application
 # de bureau n'a aucune raison d'exiger.
 #
 # `TAG+="uaccess"` délègue l'autorisation à systemd-logind : il pose une ACL
@@ -15,7 +15,7 @@
 # après elle n'aurait aucun effet. Tout nombre inférieur à 70 convient.
 #
 # Le filtre porte sur le seul identifiant fabricant (0x1532, Razer) : le PID
-# change d'un modèle à l'autre, et c'est candeo qui choisit ensuite son
+# change d'un modèle à l'autre, et c'est Candeo qui choisit ensuite son
 # périphérique sur VID / PID / interface. `ATTRS{}` — au pluriel — remonte la
 # chaîne des parents jusqu'au périphérique USB, seul endroit où `idVendor`
 # existe ; `ATTR{}` sur le nœud hidraw ne le trouverait pas.
@@ -23,5 +23,5 @@
 # Le paquet installe ce fichier dans /usr/lib/udev/rules.d/, réservé aux
 # fournisseurs. /etc/udev/rules.d/ appartient à l'administrateur : c'est là
 # qu'il place une règle concurrente pour nous contredire, et c'est là qu'il
-# faut copier ce fichier à la main quand on lance candeo depuis les sources.
+# faut copier ce fichier à la main quand on lance Candeo depuis les sources.
 SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", MODE="0660", TAG+="uaccess"

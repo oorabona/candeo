@@ -6,7 +6,7 @@ folder, keyed by its name.
 
 ## Why
 
-Every effect lives in `app_data_dir()/effects/`: the shipped ones, which candeo
+Every effect lives in `app_data_dir()/effects/`: the shipped ones, which Candeo
 seeds and updates, and the ones people write, duplicate or drop in.
 
 - **Uninstalling can delete people's work.** The NSIS uninstaller offers to
@@ -14,7 +14,7 @@ seeds and updates, and the ones people write, duplicate or drop in.
   #126, removes it without asking.
 - **An MSIX package splits the library.** Files and folders a packaged app
   creates under `AppData` go to a location private to the package. The app sees
-  them merged with the real `AppData`; no other process does. The effects candeo
+  them merged with the real `AppData`; no other process does. The effects Candeo
   seeds, duplicates or saves from its editor would be invisible to the file
   manager and to other editors, while files dropped in from outside stay
   visible. **Open folder** would show part of the library.
@@ -30,7 +30,7 @@ shared a folder.
 
 | Source | Folder | Holds | Written by |
 |---|---|---|---|
-| `shipped` | `app_data_dir()/effects/` | the effects candeo ships | candeo, at startup and on **Restore** |
+| `shipped` | `app_data_dir()/effects/` | the effects Candeo ships | Candeo, at startup and on **Restore** |
 | `user` | `document_dir()/candeo/effects/` | the effects people write, duplicate or drop in | people and the editor |
 
 - **Same layout on every system**, through Tauri's `document_dir()`: `Documents`
@@ -41,7 +41,7 @@ shared a folder.
 - **Cache:** `app_cache_dir()/effects/<source>/<name>.json`, one tree per source.
 - **Under MSIX:** the shipped folder, the cache, `settings.json` and the logs stay
   in `AppData`, private to the package and removed with it, which suits what
-  only candeo reads. The user folder is outside `AppData`: visible to every
+  only Candeo reads. The user folder is outside `AppData`: visible to every
   program, and kept on uninstall. No restricted capability.
 
 ## 2. Identity: source and name
@@ -90,7 +90,7 @@ three changes:
 
 - **"Not recorded, a file with that name exists"** no longer leaves a user's file
   among shipped ones: see the migration, which empties the shipped folder of
-  everything candeo did not put there.
+  everything Candeo did not put there.
 - **"Recorded, no longer shipped by this version":** the file moves to the user
   folder, and its references are rewritten from `shipped:` to `user:`. On a name
   already taken there, it takes a ` (2)` suffix.
@@ -126,7 +126,7 @@ and the next launch plans the same move again. A copy already made with the same
 bytes is recognized, not copied twice. A move across volumes (`Documents` on
 another drive, or in OneDrive) copies then deletes.
 
-**Every launch.** The move of files candeo did not put in the shipped folder runs
+**Every launch.** The move of files Candeo did not put in the shipped folder runs
 at every startup, after seeding: a file dropped among the shipped effects, or one
 this version no longer ships, moves then. Until it has moved, such a file is not
 listed. Seeding runs again after the move, so a shipped effect whose name a moved

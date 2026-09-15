@@ -11,7 +11,7 @@ effects and the identity and format of #44.
 
 ## Why
 
-candeo ships five effects as JavaScript compiled into the binary, and treats
+Candeo ships five effects as JavaScript compiled into the binary, and treats
 them as a second kind of effect. That kind costs a special case almost
 everywhere: reserved ids, refused deletion, copy-before-editing, manifests
 written twice, swatches kept in memory, `EffectKind::Builtin` checks in storage,
@@ -24,7 +24,7 @@ a way to overwrite another effect by pasting its code, and it adds a second
 identity next to a name that is already unique.
 
 **Decision: an effect is a `.ts` file in the effects folder, and its file name
-is its name.** candeo is a tool for power users: listing a folder is the whole
+is its name.** Candeo is a tool for power users: listing a folder is the whole
 library, adding an effect is saving a file there, and naming it is renaming
 the file.
 
@@ -90,7 +90,7 @@ export default defineEffect({
 
 The Rust side cannot strip TypeScript types, and the webview already can: the
 editor loads the TypeScript compiler for Monaco. The main window is created at
-startup and closing it only hides it, so a webview is always there while candeo
+startup and closing it only hides it, so a webview is always there while Candeo
 runs, tray-only use included.
 
 1. **Rust lists the folder**: for each `.ts`, its name, the SHA-256 of its bytes,
@@ -109,7 +109,7 @@ runs, tray-only use included.
 The effects folder holds only the files people write. The engine and the tray
 run an effect only when its cache matches the file's current hash, so they
 never run code that differs from the file on disk. A file dropped in while
-candeo runs appears after Refresh; watching the folder can come later.
+Candeo runs appears after Refresh; watching the folder can come later.
 
 What goes away: the manifest reader on the syntax tree (`editor/effect.ts`), the
 `source.ts` / `effect.js` / `manifest.json` / `swatch.json` directory per

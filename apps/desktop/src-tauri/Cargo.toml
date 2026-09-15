@@ -1,6 +1,6 @@
 [package]
 name = "candeo-desktop"
-description = "Application de bureau candeo"
+description = "Candeo desktop application"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

@@ -1,4 +1,4 @@
-# candeo — desktop application
+# Candeo — desktop application
 
 The window and its Tauri host. The rest of the workspace lives elsewhere:
 `crates/candeo-protocol` builds the HID reports, `crates/candeo-device` sends
@@ -24,7 +24,7 @@ pnpm test:web        # front-end tests (Vitest)
 
 ## Where to read next
 
-- [`README.md`](../../README.md) at the root — what candeo does, and why.
+- [`README.md`](../../README.md) at the root — what Candeo does, and why.
 - [`docs/design/studio.md`](../../docs/design/studio.md) — the architecture
   decisions for the window and the editor.
 - [`docs/design/effects-runtime.md`](../../docs/design/effects-runtime.md) — the

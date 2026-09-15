@@ -1587,7 +1587,7 @@ pub(crate) fn start_saved(app: &AppHandle, device: DeviceRef, effect: &str) -> C
 /// the reopened handle.
 ///
 /// An effect that cannot start keeps its record: deleted, it is the gallery's
-/// "no longer in the folder" notice; edited outside candeo, it waits for the
+/// "no longer in the folder" notice; edited outside Candeo, it waits for the
 /// window to compile it, and [`resume_waiting`] tries again then.
 pub(crate) fn resume_applied(app: &AppHandle, device: DeviceRef) {
     let settings = match crate::storage::store(app).and_then(|s| s.read_settings()) {

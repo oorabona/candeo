@@ -546,7 +546,7 @@ supposed to pick up. If nobody listens, those keys no longer do anything —
 observed on a Basilisk V3 whose DPI cycle and wheel lock became
 inert, and fixed by switching back to normal mode.
 
-> **candeo only controls the lighting.** Switching brings us nothing and breaks
+> **Candeo only controls the lighting.** Switching brings us nothing and breaks
 > keys the device handles very well on its own. **Never write `0x00`/`0x04`.**
 
 ### What the SDK does with it — a rule, not just a warning

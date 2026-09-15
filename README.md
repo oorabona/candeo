@@ -1,4 +1,4 @@
-# candeo
+# Candeo
 
 > *candeo*, Latin verb — "I shine, I glow". The root of *candela*,
 > the SI unit of luminous intensity.
@@ -117,13 +117,13 @@ The three design choices that structure everything else:
   source and receives the frames. The preview therefore **is** production, and
   an effect keeps running with the window closed. The motive was never
   performance — 132 LEDs × 30 fps = 3,960 colors/s, trivial.
-- **Closing the window tucks candeo into the system tray.** This is the second
+- **Closing the window tucks Candeo into the system tray.** This is the second
   half of the previous sentence, and it did not hold until issue #46: a thread
   independent of the window does not outlive the process, and the process exited
   with its last window. The tray icon keeps it alive — it intercepts
   `RunEvent::ExitRequested` — and provides what is needed to control things
   without the window: current effect and library per controlled device, sending
-  to the keyboard as a toggle, lights off. **"Quitter candeo" (Quit candeo) is
+  to the keyboard as a toggle, lights off. **"Quit Candeo" is
   the only real exit there**, and quitting leaves the lighting as it is. See
   [`src/tray.rs`](apps/desktop/src-tauri/src/tray.rs).
 - **The simulator draws the real keyboard**, full-size ISO layout. The device

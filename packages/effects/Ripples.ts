@@ -1,6 +1,6 @@
 // Ripples — a ring spreads from every key pressed and fades as it widens.
 //
-// It reads key presses (`inputs: ['keys']`), which candeo captures only while an
+// It reads key presses (`inputs: ['keys']`), which Candeo captures only while an
 // effect like this one runs. Each press comes with the instant it happened, so a
 // ring's radius is its age times the speed: nothing is kept between frames, and
 // the preview draws the same rings as the keyboard.

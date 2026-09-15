@@ -1327,7 +1327,7 @@ pub fn run() {
                 // window closing — and `Some` an exit requested by the code,
                 // that is, our own "Quitter" (Quit). The distinction is the
                 // whole mechanism: preventing without making it would make
-                // candeo impossible to quit, even through its only menu item
+                // Candeo impossible to quit, even through its only menu item
                 // meant for that.
                 //
                 // And only as long as there is an icon: without it, nothing

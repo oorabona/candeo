@@ -172,7 +172,7 @@ displays the result.
 > used to stop with its last window — nothing prevented
 > `RunEvent::ExitRequested`. What this paragraph describes has therefore only been true
 > since issue #46: the tray icon holds back the exit, and
-> the window's close button **collapses to the tray** instead of quitting. "Quitter candeo" (Quit candeo), in
+> the window's close button **collapses to the tray** instead of quitting. "Quit Candeo", in
 > the icon's menu, is the only thing that stops a render loop by
 > ending the process — and it leaves the lighting as it is rather than
 > turning it off. See [`src/tray.rs`](../../apps/desktop/src-tauri/src/tray.rs).
@@ -346,7 +346,7 @@ Three points that are not details:
 3. **`/usr/lib/udev/rules.d/`, not `/etc/`.** The package is a vendor;
    `/etc/udev/rules.d/` belongs to the administrator, who must be able to override
    us. It is also where the file must be copied by hand when
-   running candeo from source.
+   running Candeo from source.
 
 Delivery goes through `bundle.linux.deb.files` and `bundle.linux.rpm.files` in
 `tauri.conf.json`. The key is the path **inside the package**, the value the source
@@ -533,7 +533,7 @@ goes through the existing commands.
   frames, a render that never returns never reads it again — and since an effect
   runs with the window closed, closing the window does not rescue it. Since the close button collapses to the tray instead
   of quitting, it rescues it even less: the last resort is
-  "Quitter candeo" in the icon's menu, which takes down the whole process.
+  "Quit Candeo" in the icon's menu, which takes down the whole process.
 - **The two bounds do not have the same shape**, because the interrupt
   handler is set on the `Runtime` **once**. Sampling only
   needs one deadline, captured by value; the loop changes it every

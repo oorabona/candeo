@@ -143,7 +143,7 @@ and the next would erase the previous one.
 
 ### Plugged in, unplugged
 
-candeo listens to the system instead of enumerating on a timer (#81, `src-tauri/src/hotplug.rs`): HID interface notifications on Windows (`CM_Register_Notification`), kernel uevents for `hidraw` nodes on Linux. A notification only says "look again", and nothing depends on how fast the machine is: notifications arriving during a pass cause another one, a burst is gathered into one pass (150 ms of quiet) only to save work, and an adopted device that is plugged in but does not open yet — firmware starting, permissions not applied — is tried again after 0.25, 0.5, 1, 2 and 4 s. Each pass compares what is plugged in with what is open:
+Candeo listens to the system instead of enumerating on a timer (#81, `src-tauri/src/hotplug.rs`): HID interface notifications on Windows (`CM_Register_Notification`), kernel uevents for `hidraw` nodes on Linux. A notification only says "look again", and nothing depends on how fast the machine is: notifications arriving during a pass cause another one, a burst is gathered into one pass (150 ms of quiet) only to save work, and an adopted device that is plugged in but does not open yet — firmware starting, permissions not applied — is tried again after 0.25, 0.5, 1, 2 and 4 s. Each pass compares what is plugged in with what is open:
 
 - a device that left is **closed**, and its open failure forgotten. A loop running on it keeps running, writing nowhere;
 - an `adopted` device that came back is **opened** as at startup — serial checked, brightness reapplied — and its applied effect resumes (`set_resume_effects`). A loop still running finds the handle filled again and carries on;
@@ -423,7 +423,7 @@ JavaScript compiled from a file's **current** bytes.
 The shipped effects, then the user's, each sorted by name regardless of case.
 `kind` is `builtin` for a file of the shipped folder recorded as copied by the
 application — modified or not — and `user` for a file of the user's folder. A file
-of the shipped folder candeo did not put there is not listed: the next startup
+of the shipped folder Candeo did not put there is not listed: the next startup
 moves it to the user's folder. A built-in is listed in its own gallery section,
 and is not deleted, renamed or saved over (§The shipped effects). `modified` is
 true for a built-in whose file no longer has the recorded hash.
@@ -566,7 +566,7 @@ user's; what was done there is repaired on request, never at startup — see
 | Swirl circles | — | two glowing circles orbiting the center |
 | Ripples | — | a ring spreading from every key pressed; reads key presses |
 
-Color wheel to Swirl circles were written for candeo after effects of the OpenRGB
+Color wheel to Swirl circles were written for Candeo after effects of the OpenRGB
 Effects Plugin, from what they show, not from its code. None of the shipped
 effects keeps state between frames: what a key shows depends on the instant, and
 for Ripples on the presses the engine gives with it (`docs/design/key-input.md`),
@@ -672,7 +672,7 @@ collision). `activeEffects` and `effectParams` are rewritten from the old ids to
 the names, and `settings.json` records `version: 1` so that this happens once.
 Then the former ids of the shipped effects move to their names, recorded as
 `version: 2`, and the shipped effects are copied. Last, every file of that folder
-candeo did not copy moves to the user's folder, and every reference becomes a key
+Candeo did not copy moves to the user's folder, and every reference becomes a key
 — `shipped:` for a recorded shipped effect, `user:` otherwise — recorded as
 `version: 3`; the flat cache of version 2 is deleted and compiled again. Settings
 are rewritten **before** files are moved, and a directory or file is removed only
@@ -763,7 +763,7 @@ Whether a device that opens starts its applied effect again: at startup, on
 adoption, and when it is plugged back in. On by default; only `false` is written. Rust resumes the effect itself,
 with the settings saved for it on that device, so it works with the window
 hidden. Nothing starts when the effect already runs there. An effect that cannot
-start keeps its `activeEffects` entry and is logged; one edited outside candeo
+start keeps its `activeEffects` entry and is logged; one edited outside Candeo
 waits for the window to compile it, and `cache_effect` resumes it then.
 
 ### `get_launch_at_login() -> LaunchAtLogin` · `set_launch_at_login(on) -> LaunchAtLogin`
@@ -781,11 +781,11 @@ the only record**, not `settings.json`: the `Run` value under
 folder on Linux, pointing at the AppImage itself when there is one. The system's
 own tools change the same entry, so `enabled` reads it back: an entry Task Manager
 turned off (`StartupApproved`) or a desktop marked `Hidden=true` is off. Turning
-it on from candeo clears Task Manager's "off".
+it on from Candeo clears Task Manager's "off".
 
 The entry passes `--hidden`. The window is declared `create: false` and built at
 the end of `setup`; launched with `--hidden`, it is built only when someone opens
-it from the tray or launches candeo again. Without a tray icon it opens anyway,
+it from the tray or launches Candeo again. Without a tray icon it opens anyway,
 being the only way in.
 
 A development build writes no entry: it would register a binary under `target/`.
@@ -979,7 +979,7 @@ configuration, and on Linux the three folders differ.
 How many files are kept is a setting, `preferences.logFilesKept`: seven by
 default, `0` for all of them, as OpenRGB's `file_count_limit`.
 `set_log_files_kept(keep)` saves it and deletes the files beyond it at once;
-otherwise candeo deletes them at startup, once the settings are read, and when a
+otherwise Candeo deletes them at startup, once the settings are read, and when a
 new day's file starts. Only `candeo.YYYY-MM-DD.log` files are ever deleted. The
 cap counts files, not bytes: what bounds a day's size is the level.
 
@@ -1105,7 +1105,7 @@ Cannot fail because of a device: being unable to enumerate USB or read back the
 settings is exactly what a diagnostic must **say**, not what should
 interrupt it.
 
-Every path candeo writes as text — here, in the "candeo starting" log line, in
+Every path Candeo writes as text — here, in the "Candeo starting" log line, in
 error messages — has the home directory as `~` (`src-tauri/src/paths.rs`): the
 log and the diagnostic end up in public bug reports, and the home directory
 usually carries the user's name. What follows `~` still says where the file is.

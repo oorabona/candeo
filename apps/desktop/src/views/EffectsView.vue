@@ -142,7 +142,7 @@ const {
  * La colonne liste les appareils **pilotés**, et rien d'autre.
  *
  * L'adoption reste dans la vue Périphériques : choisir ce qu'on configure et
- * choisir ce que candeo a le droit de piloter sont deux gestes différents, et
+ * choisir ce que Candeo a le droit de piloter sont deux gestes différents, et
  * les fondre ferait d'un clic de sélection une prise de contrôle.
  */
 const piloted = computed(() => devices.value.filter((d) => d.state === 'adopted'))

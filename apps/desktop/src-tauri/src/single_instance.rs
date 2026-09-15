@@ -1,4 +1,4 @@
-//! One instance of candeo at a time.
+//! One instance of Candeo at a time.
 //!
 //! Two processes share neither the keyboard nor the settings, and both failures
 //! are hard to read:
@@ -16,7 +16,7 @@
 //!
 //! **The single instance is therefore what makes the fixed temporary name
 //! safe.** The two decisions hold together, and do not come apart one without
-//! the other: making candeo multi-instance would force revisiting that name,
+//! the other: making Candeo multi-instance would force revisiting that name,
 //! and revisiting that name without it would buy nothing.
 //!
 //! # What this does not protect against
@@ -49,7 +49,7 @@ pub(crate) const MAIN_WINDOW: &str = "main";
 pub(crate) fn init<R: Runtime>() -> TauriPlugin<R> {
     tauri_plugin_single_instance::init(|app, _args, _cwd| {
         // The second launch's arguments and working directory are ignored:
-        // candeo has no command line. The day it has one — opening an effect,
+        // Candeo has no command line. The day it has one — opening an effect,
         // for instance — this is where it would be relayed to the running
         // instance.
         if let Err(e) = reveal(app) {
@@ -130,8 +130,8 @@ fn reopen<R: Runtime>(app: &AppHandle<R>) -> Result<WebviewWindow<R>, String> {
         .iter()
         // On the label alone, and above all not on the `create` flag Tauri
         // reads at startup: a window declared `create: false` — which is how
-        // candeo would start hidden in the system tray — is still exactly the
-        // one to open when someone launches candeo again.
+        // Candeo would start hidden in the system tray — is still exactly the
+        // one to open when someone launches Candeo again.
         .find(|w| w.label == MAIN_WINDOW)
         .cloned()
         .ok_or_else(|| format!("no “{MAIN_WINDOW}” window declared in tauri.conf.json"))?;

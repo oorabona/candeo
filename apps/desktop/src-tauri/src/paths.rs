@@ -1,4 +1,4 @@
-//! Paths as candeo writes them into text: logs, the copied diagnostic, error
+//! Paths as Candeo writes them into text: logs, the copied diagnostic, error
 //! messages.
 //!
 //! That text ends up pasted into public bug reports, and the home directory

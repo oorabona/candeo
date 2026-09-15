@@ -167,7 +167,7 @@ impl fmt::Display for LogLevel {
 ///
 /// Two parts, and the second is the reason this function exists: our crates at
 /// the requested level, **everything else at least as quiet**. A global `trace`
-/// would make the file unreadable without teaching anything about candeo.
+/// would make the file unreadable without teaching anything about Candeo.
 ///
 /// The `min` covers the only case where the rule flips: asking for `error` is
 /// asking for silence, and leaving third parties at `warn` would then be chattier
@@ -338,7 +338,7 @@ pub fn init(app: &AppHandle) {
         os = std::env::consts::OS,
         architecture = std::env::consts::ARCH,
         log = dir.as_deref().map(crate::paths::shown),
-        "candeo starting"
+        "Candeo starting"
     );
     if let Some(e) = file_error {
         tracing::error!("no log on disk, only standard output remains: {e}");
@@ -856,7 +856,7 @@ pub fn diagnostic(app: AppHandle, state: State<'_, AppState>) -> CmdResult<Strin
         out.push('\n');
     };
 
-    line(&mut out, "candeo", &app.package_info().version.to_string());
+    line(&mut out, "Candeo", &app.package_info().version.to_string());
     // The first two things asked about odd rendering or a crash at startup (#48).
     line(
         &mut out,

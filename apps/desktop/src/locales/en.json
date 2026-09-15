@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "candeo - {summary}",
+    "title": "Candeo - {summary}",
     "tabs": {
       "effects": "Effects",
       "devices": "Devices",
@@ -27,7 +27,7 @@
     "percent": "{n}%",
     "noDevice": "No device controlled.",
     "chooseDevice": "Choose a device",
-    "noDeviceNotice": "No device controlled: the library can be browsed and the preview runs on the default layout, but applying an effect needs a device candeo is allowed to control.",
+    "noDeviceNotice": "No device controlled: the library can be browsed and the preview runs on the default layout, but applying an effect needs a device Candeo is allowed to control.",
     "deviceStopped": "stopped · remembered: {name}",
     "deviceIdle": "no effect",
     "groups": {
@@ -153,9 +153,9 @@
     "noDevice": "No device controlled",
     "devicesUnavailable": "Devices unavailable",
     "openWindow": "Open window",
-    "quit": "Quit candeo",
-    "stillRunningTitle": "candeo is still running",
-    "stillRunningBody": "Effects keep running. To quit, right-click the candeo icon in the notification area, then “{quit}”.",
+    "quit": "Quit Candeo",
+    "stillRunningTitle": "Candeo is still running",
+    "stillRunningBody": "Effects keep running. To quit, right-click the Candeo icon in the notification area, then “{quit}”.",
     "sendToKeyboard": "Send to keyboard",
     "builtinEffects": "Built-in",
     "userEffects": "Yours",
@@ -214,7 +214,7 @@
     "effectExists": "An effect named “{name}” already exists.",
     "builtinNotSaved": "“{name}” is a built-in effect: duplicate it to change it.",
     "builtinNotRenamed": "“{name}” is a built-in effect: duplicate it to rename it.",
-    "builtinNotDeleted": "“{name}” is a built-in effect: it cannot be deleted from candeo.",
+    "builtinNotDeleted": "“{name}” is a built-in effect: it cannot be deleted from Candeo.",
     "notBuiltin": "“{name}” is not a built-in effect.",
     "builtinNameTaken": "One of your effects is already named “{name}”: rename it to restore the built-in one.",
     "effectChanged": "“{name}” changed while it was compiling: refresh the library.",
@@ -245,9 +245,9 @@
     "startup": {
       "title": "Startup",
       "resume": "Resume applied effects",
-      "resumeDetail": "When candeo starts or a keyboard is plugged back in, the effect applied on it starts again.",
+      "resumeDetail": "When Candeo starts or a keyboard is plugged back in, the effect applied on it starts again.",
       "login": "Launch at login",
-      "loginDetail": "candeo starts hidden in the notification area, with no window.",
+      "loginDetail": "Candeo starts hidden in the notification area, with no window.",
       "loginUnavailable": "Only in the installed application."
     },
     "log": {

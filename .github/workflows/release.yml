@@ -180,16 +180,23 @@ jobs:
           VERSION: ${{ needs.prepare.outputs.version }}
         run: |
           set -euo pipefail
-          files=(
-            "target/release/bundle/nsis/candeo_${VERSION}_x64-setup.exe"
-            "target/release/bundle/msi/candeo_${VERSION}_x64_en-US.msi"
+          built=(
+            "target/release/bundle/nsis/Candeo_${VERSION}_x64-setup.exe"
+            "target/release/bundle/msi/Candeo_${VERSION}_x64_en-US.msi"
           )
-          for f in "${files[@]}"; do
+          # Tauri names installers after productName; release files keep the
+          # lowercase name. Copied to a folder of their own: renamed in place,
+          # the name differs only by case, the same file on Windows.
+          mkdir -p assets
+          files=()
+          for f in "${built[@]}"; do
             if [ ! -f "$f" ]; then
               echo "::error::$f was not built"
               find target/release/bundle -maxdepth 2 -type f
               exit 1
             fi
+            files+=("assets/candeo${f##*/Candeo}")
+            cp "$f" "${files[-1]}"
           done
           gh release upload "$TAG" --clobber "${files[@]}"
 
@@ -227,8 +234,8 @@ jobs:
           VERSION: ${{ needs.prepare.outputs.version }}
         run: |
           set -euo pipefail
-          deb="target/release/bundle/deb/candeo_${VERSION}_amd64.deb"
-          rpm="target/release/bundle/rpm/candeo-${VERSION}-1.x86_64.rpm"
+          deb="target/release/bundle/deb/Candeo_${VERSION}_amd64.deb"
+          rpm="target/release/bundle/rpm/Candeo-${VERSION}-1.x86_64.rpm"
           for f in "$deb" "$rpm"; do
             if [ ! -f "$f" ]; then
               echo "::error::$f was not built"
@@ -239,7 +246,11 @@ jobs:
           rule='usr/lib/udev/rules.d/60-candeo.rules'
           dpkg-deb -c "$deb" | grep -F "$rule"
           rpm -qpl "$rpm" | grep -F "/$rule"
-          gh release upload "$TAG" --clobber "$deb" "$rpm"
+          # Lowercase release files, as for the Windows installers.
+          mkdir -p assets
+          cp "$deb" "assets/candeo_${VERSION}_amd64.deb"
+          cp "$rpm" "assets/candeo-${VERSION}-1.x86_64.rpm"
+          gh release upload "$TAG" --clobber "assets/candeo_${VERSION}_amd64.deb" "assets/candeo-${VERSION}-1.x86_64.rpm"
 
   publish:
     needs: [prepare, windows, linux]

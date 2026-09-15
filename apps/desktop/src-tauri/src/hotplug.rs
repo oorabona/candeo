@@ -39,7 +39,7 @@ const RETRIES: [Duration; 5] = [
     Duration::from_secs(4),
 ];
 
-/// Starts listening. Without notifications — refused by the system — candeo
+/// Starts listening. Without notifications — refused by the system — Candeo
 /// works as before: a replugged device is reconnected from **Devices**.
 pub(crate) fn watch(app: &AppHandle) {
     let (tx, rx) = mpsc::channel::<()>();

@@ -96,7 +96,7 @@ effect needs it (a "microphone muted" light is better served by signals, §2.3).
 
 ### 2.3 External signals
 
-Named values that other software sends to candeo:
+Named values that other software sends to Candeo:
 
 ```text
 POST http://127.0.0.1:<port>/signals   { "doorbell": "ring", "ci": "failed", "volume": 0.4 }
@@ -107,7 +107,7 @@ render({ signals }) // { doorbell: 'ring', ci: 'failed', volume: 0.4 }
 ```
 
 - **Why it matters most**: once other software can push values, every
-  integration candeo does not write becomes a script — Home Assistant, a CI job,
+  integration Candeo does not write becomes a script — Home Assistant, a CI job,
   a mute state, a recording state.
 - **The local API**:
   - **Off by default**, enabled in Settings.
@@ -123,8 +123,8 @@ render({ signals }) // { doorbell: 'ring', ci: 'failed', volume: 0.4 }
   running instance through the single-instance channel, for scripts that would
   rather not handle HTTP.
 - **Home Assistant**: the HTTP API is enough for its `rest_command`. MQTT, with
-  candeo as a client of the broker Home Assistant already runs, needs no inbound
-  port and could expose candeo as an entity. It is a later step, if HTTP proves
+  Candeo as a client of the broker Home Assistant already runs, needs no inbound
+  port and could expose Candeo as an entity. It is a later step, if HTTP proves
   awkward there.
 - Signals are also **automation triggers** (§3): "when `doorbell` becomes `ring`".
 

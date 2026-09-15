@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "candeo - {summary}",
+    "title": "Candeo - {summary}",
     "tabs": {
       "effects": "Effets",
       "devices": "Périphériques",
@@ -27,7 +27,7 @@
     "percent": "{n} %",
     "noDevice": "Aucun appareil piloté.",
     "chooseDevice": "Choisir un périphérique",
-    "noDeviceNotice": "Aucun appareil piloté : la bibliothèque se parcourt et l'aperçu tourne sur le gabarit par défaut, mais appliquer un effet demande un appareil que candeo a le droit de piloter.",
+    "noDeviceNotice": "Aucun appareil piloté : la bibliothèque se parcourt et l'aperçu tourne sur le gabarit par défaut, mais appliquer un effet demande un appareil que Candeo a le droit de piloter.",
     "deviceStopped": "arrêté · retenu : {name}",
     "deviceIdle": "aucun effet",
     "groups": {
@@ -153,9 +153,9 @@
     "noDevice": "Aucun appareil piloté",
     "devicesUnavailable": "Appareils indisponibles",
     "openWindow": "Ouvrir la fenêtre",
-    "quit": "Quitter candeo",
-    "stillRunningTitle": "candeo tourne toujours",
-    "stillRunningBody": "Les effets continuent. Pour quitter, clic droit sur l'icône candeo dans la zone de notification, puis « {quit} ».",
+    "quit": "Quitter Candeo",
+    "stillRunningTitle": "Candeo tourne toujours",
+    "stillRunningBody": "Les effets continuent. Pour quitter, clic droit sur l'icône Candeo dans la zone de notification, puis « {quit} ».",
     "sendToKeyboard": "Envoyer au clavier",
     "builtinEffects": "Intégrés",
     "userEffects": "À vous",
@@ -214,7 +214,7 @@
     "effectExists": "Un effet nommé « {name} » existe déjà.",
     "builtinNotSaved": "« {name} » est un effet intégré : dupliquez-le pour le modifier.",
     "builtinNotRenamed": "« {name} » est un effet intégré : dupliquez-le pour le renommer.",
-    "builtinNotDeleted": "« {name} » est un effet intégré : il ne se supprime pas depuis candeo.",
+    "builtinNotDeleted": "« {name} » est un effet intégré : il ne se supprime pas depuis Candeo.",
     "notBuiltin": "« {name} » n'est pas un effet intégré.",
     "builtinNameTaken": "Un effet à vous s'appelle déjà « {name} » : renommez-le pour restaurer l'intégré.",
     "effectChanged": "« {name} » a changé pendant sa compilation : actualisez la bibliothèque.",
@@ -245,9 +245,9 @@
     "startup": {
       "title": "Démarrage",
       "resume": "Relancer les effets appliqués",
-      "resumeDetail": "Au démarrage de candeo ou quand un clavier est rebranché, l'effet qui y était appliqué repart.",
+      "resumeDetail": "Au démarrage de Candeo ou quand un clavier est rebranché, l'effet qui y était appliqué repart.",
       "login": "Lancer à l'ouverture de session",
-      "loginDetail": "candeo démarre replié dans la zone de notification, sans fenêtre.",
+      "loginDetail": "Candeo démarre replié dans la zone de notification, sans fenêtre.",
       "loginUnavailable": "Seulement dans l'application installée."
     },
     "log": {

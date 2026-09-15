@@ -416,10 +416,10 @@ export function setResumeEffects(on: boolean): Promise<void> {
   return invoke('set_resume_effects', { on })
 }
 
-/** Whether candeo launches at login, and whether this build can change it. */
+/** Whether Candeo launches at login, and whether this build can change it. */
 export interface LaunchAtLogin {
   enabled: boolean
-  /** False in a development build, and on a system candeo writes no entry for. */
+  /** False in a development build, and on a system Candeo writes no entry for. */
   available: boolean
 }
 
