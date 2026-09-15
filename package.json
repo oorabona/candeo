@@ -1,7 +1,7 @@
 {
   "name": "candeo",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Controle de l'eclairage clavier, par acces HID direct",
   "packageManager": "pnpm@12.4.1",
   "engines": {
